@@ -1,0 +1,23 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sks/multi-test -f ./client/Dockerfile.dev
+
+script:
+  - docker run -e CI=true  sks/multi-test npm test
+
+after_scuess:
+  - docker build -t sks/multi-client ./client
+  - docker build -t sks/multi-nginx ./nginx
+  - docker build -t sks/multi-server ./server
+  - docker build -t sks/multi-worker ./worker
+
+# login to docker hub
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #
+  - docker push sks/multi-client
+  - docker push sks/multi-nginx
+  - docker push sks/multi-server
+  - docker push sks/multi-worker
