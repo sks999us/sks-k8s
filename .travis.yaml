@@ -17,7 +17,7 @@ after_scuess:
 
 # login to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  ##
+  ###
   - docker push sks/multi-client
   - docker push sks/multi-nginx
   - docker push sks/multi-server
