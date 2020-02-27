@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t sks/multi-test -f ./client/Dockerfile.dev
+  - docker build -t sks/multi-test -f ./client/Dockerfile.dev .
 
 script:
   - docker run -e CI=true  sks/multi-test npm test
