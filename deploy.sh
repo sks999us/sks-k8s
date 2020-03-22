@@ -11,6 +11,6 @@ docker push sks999us/sks-server:$SHA
 docker push sks999us/sks-worker:$SHA 
 
 kubectl apply -f k8
-kubectl set image deployments/client-deployment server=sks999us/sks-client:$SHA 
+kubectl set image deployments/client-deployment client=sks999us/sks-client:$SHA 
 kubectl set image deployments/server-deployment server=sks999us/sks-server:$SHA 
-kubectl set image deployments/worker-deployment server=sks999us/sks-worker:$SHA 
+kubectl set image deployments/worker-deployment worker=sks999us/sks-worker:$SHA 
