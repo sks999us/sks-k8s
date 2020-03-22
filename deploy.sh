@@ -1,6 +1,6 @@
 docker build -t sks999us/sks-client:latest -t sks999us/sks-client:$SHA -f ./client/Dockerfile ./client
-docker build -t sks999us/sks-server:latest -t sks999us/sks-client:$SHA  -f ./server/Dockerfile ./server
-docker build -t sks999us/sks-worker:latest -t sks999us/sks-client:$SHA  -f ./worker/Dockerfile ./worker
+docker build -t sks999us/sks-server:latest -t sks999us/sks-server:$SHA  -f ./server/Dockerfile ./server
+docker build -t sks999us/sks-worker:latest -t sks999us/sks-worker:$SHA  -f ./worker/Dockerfile ./worker
 
 docker push sks999us/sks-client:latest
 docker push sks999us/sks-server:latest
