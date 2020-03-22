@@ -9,11 +9,11 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_d9e40ed4d23b_key -iv $encrypted_d9e40ed4d23b_iv -in service-account.json.enc -out service-account.json -d
   - curl  https://sdk.cloud.google.com  | bash  > /dev/null;
   - source  $HOME/google-cloud-sdk/path.bash.inc
-  - gcloud  component update kubectl
+  - gcloud  components update kubectl
   - gcloud  auth  activate-service-account --key-file service-account.json
   - gcloud  config  set project fluid-outcome-271923
   - gcloud  config  set compute/zone  us-west1-a
-  - gcloud  container clusters  get credentials sks-k8s-cluster
+  - gcloud  container clusters  get-credentials sks-k8s-cluster
   - echo  "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t sks999us/react-test -f ./client/Dockerfile.dev ./client
 
