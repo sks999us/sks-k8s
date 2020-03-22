@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: sks999us/multi-server
+          image: sks999us/sks-server
           ports:
             - containerPort: 5000
           env:

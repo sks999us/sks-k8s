@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: sks999us/multi-worker
+          image: sks999us/sks-worker
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
