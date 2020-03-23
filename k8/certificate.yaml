@@ -3,18 +3,18 @@ kind: Certificate
 metadata:
   name: tatanagar-net-tls
 spec:
-    secretName: tatanagar-net
-    issuerRef:
-      name: letsencrypt-prod
-      kind: ClusterIssuer
-    commonName: tatanagar.net
-    dnsNames:
-      - tatanagar.net
-      - www.tatanagar.net
-    acme:
-      config:
-        - http01:
-            ingressClass: nginx
-          domains:
-            - tatanagar.net
-            - www.tatanagar.net
+  secretName: tatanagar-net
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: tatanagar.net
+  dnsNames:
+    - tatanagar.net
+    - www.tatanagar.net
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - tatanagar.net
+          - www.tatanagar.net
