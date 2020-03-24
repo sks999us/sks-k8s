@@ -8,4 +8,9 @@ spec:
     email:  'salilsahu9@gmail.com'
     privateKeySecretRef:
       name: letsencrypt-prod
-    http01: {}
+    #http01: {}
+    # Enable the HTTP-01 challenge provider
+    solvers:
+       - http01:
+           ingress:
+             class:  nginx
